@@ -41,7 +41,7 @@
 		<h3>About</h3>
 		<figure>
 			{% if site.meta.author.gravatar %}<img src="{{ site.meta.gravatar}}{{ site.meta.author.gravatar }}?s=48" />{% endif %}
-			<figcaption><strong>{{ site.meta.author.email }}</strong></figcaption>
+			<figcaption><strong>{{ site.meta.author.name }}</strong></figcaption>
 		</figure>
 		<p>{{ site.meta.author.selfdesc }}</p>
 	</div>
