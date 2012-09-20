@@ -43,7 +43,7 @@
 			{% if site.meta.author.gravatar %}<img src="{{ site.meta.gravatar}}{{ site.meta.author.gravatar }}?s=48" />{% endif %}
 			<figcaption><strong>{{ site.meta.author.email }}</strong></figcaption>
 		</figure>
-		<p>{{{{ site.meta.author.selfdesc }}}}</p>
+		<p>{{ site.meta.author.selfdesc }}</p>
 	</div>
 	
 	<div class="block block-license">
