@@ -41,7 +41,7 @@
 		<h3>About</h3>
 		<figure>
 			{% if site.meta.author.gravatar %}<img src="{{ site.meta.gravatar}}{{ site.meta.author.gravatar }}?s=48" />{% endif %}
-			<figcaption><strong>{{ site.meta.author.name }}</strong></figcaption>
+			<figcaption><strong>{{ site.meta.author.email }}</strong></figcaption>
 		</figure>
 		<p>cnupdog first blog.</p>
 	</div>
