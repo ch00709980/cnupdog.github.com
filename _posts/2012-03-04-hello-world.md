@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Hello world!
-category: default
+category: others
 ---
 
-这是一篇测试文章，你可以在`_posts`目录修改或删除它。
+这是一篇测试文章--使用mon作为编辑markdown的语法，你可以在`_posts`目录修改或删除它。
 
 现在，我可以：
 

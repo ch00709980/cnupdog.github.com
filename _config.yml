@@ -1,4 +1,4 @@
-markdown: kramdown
+rkdown: kramdown
 pygments: true
 safe: false
 permalink: /posts/:title.html
@@ -10,15 +10,19 @@ host: cnupdog.github.com
 
 custom:
     category:
-        default: Default Category
-        another: Another Category
+        programming: Programming
+        devops: Devops
+        photos: Photos
+        others: Others
     categories:
-      - name:  default
-        title: Default Category
-
-      - name:  another
-        title: Another Category
-
+      - name:  programming
+        title: Programming
+      - name:  devops
+        title: Devops
+      - name:  photos
+        title: Photos
+      - name:  others
+        title: Others
 meta:
     author:
         name: cnupdog
