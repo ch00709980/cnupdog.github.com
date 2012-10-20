@@ -3,9 +3,9 @@ layout: post
 title: 开始使用Django(一)
 category: programming
 ---
-```
-在开始学习使用Django之后，第一次遇到的难题就是静态文件（static）的配置，网上资料很多，但也经过多次失败的尝试。所以决心理清这块内容的实际原理。
-```
+
+    在开始学习使用Django之后，第一次遇到的难题就是静态文件（static）的配置，网上资料很多，但也经过多次失败的尝试。所以决心理清这块内容的实际原理。
+
 ## Django目录结构
 Django本身没有制定标准的目录结构规范，所以我们会看到不同的项目目录结构，当然也对应着不同的配置文件。但对于有代码洁癖的人来说，想从一开始就`最佳实践`。  
 在[Django最佳实践](http://yangyubo.com/django-best-practices)中有推荐的布局，如下：  
@@ -22,9 +22,7 @@ Django本身没有制定标准的目录结构规范，所以我们会看到不�
 
 ```setting.py```有如下几个重要配置需要注意：  
 
-STATIC_ROOT:  运行collectstatic，所有app中的静态文件包括在
-
-STATICFILES_DIRS中指定的都会手机到此目录，这在部署的时候很方便，开发的时候可以忽略此设置。（建议留空！）  
+STATIC_ROOT:  运行collectstatic，所有app中的静态文件包括在STATICFILES_DIRS中指定的都会手机到此目录，这在部署的时候很方便，开发的时候可以忽略此设置。（建议留空！）  
 
 STATIC_URL:  用来配置静态文件请求的URL前缀，例如域名http://www.ooxx.com，并且你的STATIC_URL='/static/'，那么你访问静态文件的URL将类似http://www.ooxx.com/static/img/xixihaha.jpg
 
@@ -32,19 +30,17 @@ ADMIN_MEDIA_PREFIX:  是Django后台管理模块使用的静态文件配置。
 
 STATICFILES_DIRS:  （默认情况下staticfiles认为静态文件是存放在各app的static目录下）这是静态文件放置的目录，我们如果采用“集中式”管理静态文件，即static文件夹在项目的根目录下和App平级。为了移植方便，可以这么去配置：
 
-<code>
-BASE = os.path.dirname(os.path.abspath(__file__))  
-STATICFILES_DIRS = (os.path.join(BASE,'static').replace('\\','/'),)
-</code>
+
+    BASE = os.path.dirname(os.path.abspath(__file__))  
+    STATICFILES_DIRS = (os.path.join(BASE,'static').replace('\\','/'),)
+
 
 ```url.py```对应也需要配置，在末尾增加：  
 
-urlpatterns += staticfiles_urlpatterns() #静态文件的路由
+    urlpatterns += staticfiles_urlpatterns() #静态文件的路由
 
 上面的配置结束后，我们就可以这么去使用了：
-  
-<code> 
-< rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap/bootstrap.css" />
-</code>  
+   
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap/bootstrap.css" />  
 
 
