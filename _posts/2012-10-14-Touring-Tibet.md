@@ -7,6 +7,9 @@ tags:
 
 ## 米拉山口（海拔5013）
 
-<img src="/assets/img/tibet/mila_bull.jpg" alt="米拉山顶金牛头像" title="米拉金牛" width="100%" />
+<img src="/assets/img/tibet/mila_bull.jpg" title="米拉金牛" width="100%" />
+
+## “张大人花“（波斯菊）
+<img src="/assets/img/tibet/bosiju.jpg" title="张大人花" width="100%" />
 
 -未完待续-
