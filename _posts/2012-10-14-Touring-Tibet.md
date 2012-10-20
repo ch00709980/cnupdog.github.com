@@ -7,6 +7,6 @@ tags:
 
 ## 米拉山口（海拔5013）
 
-<img src="/assets/img/tibet/mila.jpg" alt="米拉山顶金牛头像" title="米拉金牛" width="100%" />
+<img src="/assets/img/tibet/mila_bull.jpg" alt="米拉山顶金牛头像" title="米拉金牛" width="100%" />
 
 -未完待续-
