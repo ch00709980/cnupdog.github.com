@@ -42,7 +42,7 @@ STATICFILES_DIRS = (os.path.join(BASE,'static').replace('\\','/'),)
 urlpatterns += staticfiles_urlpatterns() #静态文件的路由
 
 上面的配置结束后，我们就可以这么去使用了：  
-<rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap/bootstrap.css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap/bootstrap.css" />
   
 
 
