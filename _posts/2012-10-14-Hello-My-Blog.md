@@ -19,5 +19,7 @@ Jekyll(`发音/'dʒiːk əl/，"杰克尔"`)是一个静态站点生成器，它
 * [GIT速查手册](http://jiyeqian.github.com/2011/09/introduction-to-git/)
 * [DNSPod官方帮助中心](https://www.dnspod.cn/Support)
 
+-EOF-
+
 {% include references.md %}
 

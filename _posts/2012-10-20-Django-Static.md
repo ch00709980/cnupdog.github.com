@@ -44,3 +44,4 @@ STATICFILES_DIRS:  （默认情况下staticfiles认为静态文件是存放在�
     <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap/bootstrap.css" />  
 
 
+-EOF-

@@ -9,4 +9,4 @@ tags:
 
 <img src="/assets/img/tibet/mila.jpg" alt="米拉山顶金牛头像" title="米拉金牛" width="100%" />
 
-<font color=red>未完待续</font>
+-未完待续-
