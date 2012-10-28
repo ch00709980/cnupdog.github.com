@@ -7,7 +7,7 @@ category: programming
     将Django部署到线上，可选的web服务器常见有：nginx、apche、lighttpd等，查阅了若干资料对比「文章」之后，决定选择Nginx + uwsgi作为部署方案，下面介绍一下基础环境准备。
 
 系统为下图所示
-<img></img>
+<img src="/assets/img/django/django-sys-version.jpg" width="100%" />
 
 
 Python2.7安装
@@ -40,8 +40,8 @@ Virtualenv安装
 >  熟悉virtualenv指令
 5. virtualenv --no-site-packages django    
 >  如果想完全不依赖系统的packages，可以加上参数--no-site-packages来创建虚拟环境，名字叫做“django”
-6. cd django/ && source bin/activate
-7. pip install django
+6. cd django/ && source bin/activate  
+7. pip install django  
 8. pip install uwsgi  
 9. pip install supervisor  
 > 多进程管理，可以选择不安装
