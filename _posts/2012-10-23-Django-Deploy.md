@@ -50,15 +50,17 @@ Nginx安装
 --------------
 > 一般用源码编译安装Nginx，都需要先安装pcre\zlib等外部支持程序，然后配置安装nginx时候这些外部程序的***源码***的路径，这样Nginx在每次启动的时候，就会动态地去加载这些东西了。***后面是否对这些外部程序单独编译，自己决定，不编译影响不大***
 
-安装PCRE外部程序  
-1. cd /root/install  
-2. wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.30.tar.gz  
+安装PCRE外部程序
+
+1. cd /root/install
+2. wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.30.tar.gz
 3. tar -zxvf pcre-8.30.tar.gz  
 4. cd pcre-8.30  
 5. ./configure --prefix=/usr/local/pcre8.30  
 6. make && make install
 
 安装OPENSSL外部程序  
+
 1. cd /root/install  
 2. wget http://www.openssl.org/source/openssl-1.0.0a.tar.gz  
 3. tar -zxvf openssl-1.0.0a.tar.gz  
@@ -75,6 +77,7 @@ Nginx安装
 6. make && make install  
 
 最后安装NGINX  
+
 1. cd /root/install  
 2. wget http://nginx.org/download/nginx-1.0.15.tar.gz  
 3. tar -zxvf nginx-1.0.15.tar.gz  
