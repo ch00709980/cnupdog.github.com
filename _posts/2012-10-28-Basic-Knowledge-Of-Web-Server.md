@@ -1,7 +1,7 @@
 ---
 layout: post
 title: WEB服务器初步了解
-category: programming
+category: devops
 ---  
     WEB服务器主要作用两点：处理静态资源；将动态请求分发到后台应用服务器，充当桥梁。
     目前最流行的HTTP服务器主要有：Apche \ Nginx \ Lighttpd \ IIS(主要服务于ASP程序)。 
