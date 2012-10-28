@@ -23,7 +23,7 @@ Python2.7安装
 > 建议指定最终的安装目录，即使用--prefix指令，否则后续可执行文件会被默认放在/usr/local/bin，库文件会被默认放在/usr/local/lib，配置文件默认放在/usr/local/etc，资源文件放在/usr/local/share，非常不利于软件卸载
 6. make && make install
 7. cd /usr/bin  
-8.  ll | grep python 
+8. 'll | grep python' 
 9. rm –rf python 
 10. ln -s /usr/local/python2.7.1/bin/python ./python
 11. python
