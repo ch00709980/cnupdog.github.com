@@ -1,37 +1,85 @@
-yout: post
+---
+layout: post
 title: 开始使用Django(二)
 category: programming
----
+---  
 
-## Django目录结构
-Django本身没有制定标准的目录结构规范，所以我们会看到不同的项目目录结构，当然也对应着不同的配置文件。但对于有代码洁癖的人来说，想从一开始就`最佳实践`。
-在[Django最佳实践](http://yangyubo.com/django-best-practices)中有推荐的布局，如下：
-<img src="/assets/img/django/django-project-dirs.jpg" alt="Django项目推荐布局" title="Django项目推荐布局" width="100%" />
-当然目前基于开发比较多的是WEB应用，我们可以将项目（Project）定位为一个平台，应用（App）定位为一个模块。
+    将Django部署到线上，可选的web服务器常见有：nginx、apche、lighttpd等，查阅了若干资料对比「文章」之后，决定选择Nginx + uwsgi作为部署方案，下面介绍一下基础环境准备。
 
-其中静态文件夹有两种部署模式：“分布式“、“集中式“。分布式是在各个APP下建立static文件夹并包含img\css\js文件。集中式是在Project路径下建立static文件夹并包含img\css\js文件，即统一管理所>有App使用到的静态资源。
-
-## Django如何处理静态文件（基本原理）
-在实际的WEB站点中，静态文件一般是单独处理，例如使用naginx作为静态文件服务器或者使用CDN进行静态资源加速。当然Django中也可以这么去处理，Django在开发环境这么去处理静态文件：通过一系列>的配置（setting.py指定静态文件的路径，url.py添加url匹配路由），然后交由Django内置的django.views.static.server()来处理。
-
-## Django如何处理静态文件（详细配置）
-以下的详细配置，是基于Django1.4，并且准备采用“集中式”静态文件管理方式来阐述的。
-
-```setting.py```有如下几个重要配置需要注意：
-
-STATIC_ROOT:  运行collectstatic，所有app中的静态文件包括在STATICFILES_DIRS中指定的都会手机到此目录，这在部署的时候很方便，开发的时候可以忽略此设置。（建议留空！）
-
-STATIC_URL:  用来配置静态文件请求的URL前缀，例如域名http://www.ooxx.com，并且你的STATIC_URL='/static/'，那么你访问静态文件的URL将类似http://www.ooxx.com/static/img/xixihaha.jpg
-
-ADMIN_MEDIA_PREFIX:  是Django后台管理模块使用的静态文件配置。
-
-STATICFILES_DIRS:  （默认情况下staticfiles认为静态文件是存放在各app的static目录下）这是静态文件放置的目录，我们如果采用“集中式”管理静态文件，即static文件夹在项目的根目录下和App平级>。为了移植方便，可以这么去配置：
+系统为下图所示
+<img></img>
 
 
-    BASE = os.path.dirname(os.path.abspath(__file__))
-    STATICFILES_DIRS = (os.path.join(BASE,'static').replace('\\','/'),)
+Python2.7安装
+--------------
+> 由于后面步骤准备安装的virtualenv（虚拟环境）依赖python2.5+，所以需要提前装好较高版本的Python  
+> 为了后面便于卸载，建议在/root/跟目录下新建一个文件夹install存放所有的软件包源码
 
+1. cd /root/ && mkdir install && cd instal
+2. wget http://www.python.org/ftp/python/2.7.1/Python-2.7.1.tar.bz2
+3. tar -jxvf Python-2.7.1.tar.bz2
+4. cd Python-2.7.1
+5. ./configure --prefix=/usr/local/python2.7.1
+> 建议指定最终的安装目录，即使用--prefix指令，否则后续可执行文件会被默认放在/usr/local/bin，库文件会被默认放在/usr/local/lib，配置文件默认放在/usr/local/etc，资源文件放在/usr/local/share，非常不利于软件卸载
+6. make && make install
+7. cd /usr/bin  
+8. ls -al | grep python  
+9. rm –rf python 
+10. ln -s /usr/local/python2.7.1/bin/python ./python
+11. python
 
-```url.py```对应也需要配置，在末尾增加：
+Virtualenv安装
+--------------
+> Virtualenv用于在一台机器上创建多个隔离的python运行环境。主要隔离项目间的第三方包依赖
 
-    urlpatterns += staticfiles_urlpatterns() #静态文件的路由
+1. wget -q http://peak.telecommunity.com/dist/ez_setup.py
+> easy_install是由PEAK开发的setuptools包里带的一个命令，使用easy_install实际上是在调用setuptools来完成安装模块的工作。
+2. python ez_setup.py
+3. easy_install virtualenv
+4. virtualenv –h    
+>  熟悉virtualenv指令
+5. virtualenv --no-site-packages django    
+>  如果想完全不依赖系统的packages，可以加上参数--no-site-packages来创建虚拟环境，名字叫做“django”
+6. cd django/ && source bin/activate
+7. pip install django
+8. pip install uwsgi  
+9. pip install supervisor  
+> 多进程管理，可以选择不安装
+
+Nginx安装
+--------------
+> 一般用源码编译安装Nginx，都需要先安装pcre\zlib等外部支持程序，然后配置安装nginx时候这些外部程序的***源码***的路径，这样Nginx在每次启动的时候，就会动态地去加载这些东西了。***后面是否对这些外部程序单独编译，自己决定，不编译影响不大***
+
+安装PCRE外部程序  
+1. cd /root/install  
+2. wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.30.tar.gz  
+3. tar -zxvf pcre-8.30.tar.gz  
+4. cd pcre-8.30  
+5. ./configure --prefix=/usr/local/pcre8.30  
+6. make && make install
+
+安装OPENSSL外部程序  
+1. cd /root/install  
+2. wget http://www.openssl.org/source/openssl-1.0.0a.tar.gz  
+3. tar -zxvf openssl-1.0.0a.tar.gz  
+4. cd openssl-1.0.0a  
+5. ./config --prefix=/usr/local/openssl1.0.0  
+6. make && make install 
+
+安装ZLIB外部程序  
+1. cd /root/install  
+2. wget http://www.zlib.net/zlib-1.2.7.tar.bz2  
+3. tar -jxvf zlib-1.2.7.tar.bz2  
+4. cd zlib-1.2.7  
+5. ./configure --prefix=/usr/local/zlib1.2.7  
+6. make && make install  
+
+最后安装NGINX  
+1. cd /root/install  
+2. wget http://nginx.org/download/nginx-1.0.15.tar.gz  
+3. tar -zxvf nginx-1.0.15.tar.gz  
+4. cd nginx-1.0.15  
+5. ./configure --prefix=/usr/local/nginx --with-http_realip_module --with-http_sub_module --with-http_flv_module --with-http_dav_module --with-http_gzip_static_module --with-http_stub_status_module --with-http_addition_module --with-pcre=/root/install/pcre-8.30 --with-openssl=/root/install/openssl-1.0.0a --with-http_ssl_module --with-zlib=/root/install/zlib-1.2.7  
+> 这里指定的是全部源码的绝对路径  
+6. make && make install
+
