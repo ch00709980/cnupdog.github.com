@@ -62,7 +62,7 @@ ail.com" target="_blank" class="v-rss" rel="nofollow"><span>email</span></a></li
 	
 	<div class="block block-license">
 		<h3>Copyright</h3>
-		<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/cn/" target="_blank" class="hide-target-icon" title="Copyright declaration of site content"><img alt="知识共享许可协议" src="http://i.creativecommons.org/l/by-nc-nd/2.5/cn/88x31.png" /></a></p>
+		<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/cn/" target="_blank" class="hide-target-icon" title="Copyright declaration of site content"><img alt="知识共享许可协�"http://pic.yupoo.com/cnupdog_v/ColsvXC7/thumb.jpg" /></a></p>
 	</div>
 	
 	<div class="block block-thank">
