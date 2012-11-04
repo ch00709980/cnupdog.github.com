@@ -60,8 +60,7 @@ Process阻塞分析
 2. 可以在远程程序，及时flush缓冲    
 >  缺点: 不一定能更改远程程序，有点另类
 3. 使用ProcessBuilder类，利用**redirectErrorStream**将标准输出流和错误输出流合二为一。    
->  缺点: 没有实际使用过
-</s> 
+>  缺点: 没有实际使用过</s> 
 4. **推荐**并发获取Process的输出流和错误流，即启用两个线程来并发读取和处理输出流和错误流      
 >  用一个线程读取process.getInputStream()的输出流，另外一个线程来读取process.getErrorStream()的输出流，这样就能保证缓冲区得到及时的清空而不用担心线程被阻塞了
     
