@@ -45,6 +45,10 @@
 		</figure>
 		<p>{{ site.meta.author.selfdesc }}</p>
 	</div>
+
+  <div class="block block-about">
+  	<h3>Follow Me</h3>
+   </div>
 	
 	<div class="block block-license">
 		<h3>Copyright</h3>
