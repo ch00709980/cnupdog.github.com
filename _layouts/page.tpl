@@ -46,9 +46,19 @@
 		<p>{{ site.meta.author.selfdesc }}</p>
 	</div>
 
-  <div class="block block-about">
-  	<h3>Follow Me</h3>
-   </div>
+  	<div class="block block-about">
+  		<h3>Follow Me</h3>
+		<article class="violet-attent-det fn-clear">
+                        <ul class="fn-right">
+                            <li><a href="https://github.com/heiniuhaha" target="_blank" class="v-github" rel="nofollow"><span>GitHub</span></a></li>
+                            <li><a href="http://www.twitter.com/heiniuhaha" target="_blank" class="v-twitter" rel="nofollow"><span>Twitter</span></a></li>
+                            <li><a href="http://www.facebook.com/heiniuhaha" target="_blank" class="v-facebook" rel="nofollow"><span>facebook</span></a></li>
+                            <li><a href="http://www.weibo.com/heiniuhaha" target="_blank" class="v-weibo" rel="nofollow"><span>Weibo</span></a></li>
+                            <li><a href="mailto:heiniuhaha@gm
+ail.com" target="_blank" class="v-rss" rel="nofollow"><span>email</span></a></li>
+                        </ul>
+                    </article>
+  	</div>
 	
 	<div class="block block-license">
 		<h3>Copyright</h3>
