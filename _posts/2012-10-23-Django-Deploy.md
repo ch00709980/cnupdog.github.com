@@ -65,7 +65,7 @@ Nginx安装
 2. wget http://www.openssl.org/source/openssl-1.0.0a.tar.gz  
 3. tar -zxvf openssl-1.0.0a.tar.gz  
 4. cd openssl-1.0.0a  
-5. ./config --prefix=/usr/local/openssl1.0.0  
+5. ./config \-\-prefix=/usr/local/openssl1.0.0  
 6. make && make install 
 
 安装ZLIB外部程序  
@@ -82,7 +82,7 @@ Nginx安装
 2. wget http://nginx.org/download/nginx-1.0.15.tar.gz  
 3. tar -zxvf nginx-1.0.15.tar.gz  
 4. cd nginx-1.0.15  
-5. ./configure \-\-prefix=/usr/local/nginx --with-http_realip_module --with-http_sub_module --with-http_flv_module --with-http_dav_module --with-http_gzip_static_module --with-http_stub_status_module --with-http_addition_module --with-pcre=/root/install/pcre-8.30 --with-openssl=/root/install/openssl-1.0.0a --with-http_ssl_module --with-zlib=/root/install/zlib-1.2.7  
+5. ./configure \-\-prefix=/usr/local/nginx \-\-with-http_realip_module \-\-with-http_sub_module \-\-with-http_flv_module \-\-with-http_dav_module \-\-with-http_gzip_static_module \-\-with-http_stub_status_module \-\-with-http_addition_module \-\-with-pcre=/root/install/pcre-8.30 \-\-with-openssl=/root/install/openssl-1.0.0a \-\-with-http_ssl_module \-\-with-zlib=/root/install/zlib-1.2.7  
 > 这里指定的是全部源码的绝对路径  
 6. make && make install
 
