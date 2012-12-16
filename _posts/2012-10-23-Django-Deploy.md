@@ -24,7 +24,7 @@ Python2.7安装
 6. make && make install
 7. cd /usr/bin  
 8. ll \| grep python 
-9. rm –rf python 
+9. rm -rf python 
 10. ln -s /usr/local/python2.7.1/bin/python ./python
 11. python
 
