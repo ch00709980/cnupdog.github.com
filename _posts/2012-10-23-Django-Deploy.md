@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 开始使用Django(二)
-category: programming
+category: django
 ---  
 
     将Django部署到线上，可选的web服务器常见有：nginx、apche、lighttpd等，查阅了若干资料对比「文章」之后，决定选择Nginx + uwsgi作为部署方案，下面介绍一下基础环境准备。

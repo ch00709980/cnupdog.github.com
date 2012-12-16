@@ -13,6 +13,7 @@ custom:
         programming: Programming
         devops: Devops
         photos: Photos
+        django: Django
         others: Others
     categories:
       - name:  programming
@@ -21,6 +22,8 @@ custom:
         title: Devops
       - name:  photos
         title: Photos
+      - name:  django
+        title: Django
       - name:  others
         title: Others
 meta:
