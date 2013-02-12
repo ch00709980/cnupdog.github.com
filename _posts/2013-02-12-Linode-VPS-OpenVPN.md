@@ -37,10 +37,8 @@ category: programming
 14. cd /etc/openvpn/easy-rsa/2.0/keys  
 15. cp ca.crt ca.key dh1024.pem server.crt server.key /etc/openvpn  
 16. cp /usr/share/doc/openvpn-2.2.2/sample-config-files/server.conf /etc/openvpn/  
-17. vim /etc/openvpn/server.conf  
-
+17. vim /etc/openvpn/server.conf
     $ git config --global color.ui true    
-	
 18. cp /usr/share/doc/openvpn-2.2.2/sample-config-files/client.conf ~/cnupdog-client.conf  
 19. iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE  
 
