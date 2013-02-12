@@ -1,10 +1,8 @@
 ---
 layout: post
-title: Linode VPS搭建OPENVPN  
-category: thinking
-tags: [VPS, Linode]
----
-
+title: Linode VPS搭建OPENVPN
+category: programming
+--- 
 一直想租台VPS，安装想要的OS，搭建Web服务器，也顺便搭建各种代理，上国内无法上的网站。查了一些资料，最终挑选了Linode提供的VPS（512M内存, 16GB硬盘, 200GB流量/月 = **$19.95**/月，最低配置）  
 有同样需求却不知道如何挑选VPS主机商的朋友可以参照：[哪款海外 VPS 性价比高？](http://www.zhihu.com/question/19904241)
 
@@ -16,7 +14,7 @@ tags: [VPS, Linode]
 1. **如何续费？**绑定信用卡会自己扣费。  
 2. **停止服务？**在Linode面板中将所有Linode都Remove掉即可，会自动按照剩余时常退回到Linode帐号中（有任何问题都可以发送Ticket过去，一般2分钟即可获得答复）  
 3. **挑选机房？**Linode提供6个机房，建议选择**Fremont**，不建议选择~~Tokyo~~，虽然是最新的机房，但大量中国的新用户涌入使用，延迟开始大了，另外还可能因为中日关系交恶而收到影响。  
-4. **OS选择？**很奇怪现在大多人都选择安装Ubuntu当server OS，但我还是最终选择了更传统的CENTOS6，因为：CentOS和RedHat Enterprise源码一样，RHEL每五年左右更新一次，稳定安全且使得我们几乎不用去考虑升级的问题，另外我非常喜欢用yum命令（下载、升级软件超级方便）。 
+4. **OS选择？**很奇怪现在大多人都选择安装Ubuntu当server OS，但我还是最终选择了更传统的CENTOS6，因为CentOS和RedHat Enterprise源码一样，RHEL每五年左右更新一次，稳定安全且使得我们几乎不用去考虑升级的问题，另外我非常喜欢用yum命令（下载、升级软件超级方便）。 
 
 ## 通过OpenVPN部署VPN服务
 
@@ -46,10 +44,8 @@ tags: [VPS, Linode]
 
 
 ### 其他注意
-
 待定
 
 
 -EOF-
-
 
