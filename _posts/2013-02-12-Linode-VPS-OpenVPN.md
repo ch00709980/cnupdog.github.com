@@ -41,6 +41,8 @@ category: programming
     $ git config --global color.ui true    
 18. cp /usr/share/doc/openvpn-2.2.2/sample-config-files/client.conf ~/cnupdog-client.conf  
 19. iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE  
+20. sss
+    BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
 
 
 ### 其他注意
